@@ -1,0 +1,227 @@
+{
+  "name": "MCP Server - Voice AI Receptionist",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "mcp-trigger",
+      "name": "MCP Server Trigger",
+      "type": "n8n-nodes-base.mcpServerTrigger",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "toolName": "client_lookup",
+        "toolDescription": "Look up a client in the CRM using their email address. Use this when you need to check if a client exists in the system or retrieve their information.",
+        "parameters": {
+          "email": {
+            "type": "string",
+            "description": "The client's email address (must be lowercase)"
+          }
+        }
+      },
+      "id": "client-lookup-tool",
+      "name": "Client Lookup Tool",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1,
+      "position": [450, 100],
+      "credentials": {}
+    },
+    {
+      "parameters": {
+        "toolName": "new_client_crm",
+        "toolDescription": "Create a new client entry in the CRM. Use this when a client doesn't exist in the system and needs to be added.",
+        "parameters": {
+          "email": {
+            "type": "string",
+            "description": "Client's email address"
+          },
+          "name": {
+            "type": "string",
+            "description": "Client's full name"
+          },
+          "phone": {
+            "type": "string",
+            "description": "Client's phone number"
+          }
+        }
+      },
+      "id": "new-client-tool",
+      "name": "New Client CRM Tool",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1,
+      "position": [450, 200]
+    },
+    {
+      "parameters": {
+        "toolName": "check_availability",
+        "toolDescription": "Check calendar availability for appointments. Use this before booking or updating appointments to see what times are free.",
+        "parameters": {
+          "start_time": {
+            "type": "string",
+            "description": "Start time to check in ISO format (YYYY-MM-DDTHH:mm:ss)"
+          },
+          "end_time": {
+            "type": "string",
+            "description": "End time to check in ISO format (YYYY-MM-DDTHH:mm:ss)"
+          }
+        }
+      },
+      "id": "check-availability-tool",
+      "name": "Check Availability Tool",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "toolName": "book_event",
+        "toolDescription": "Book a new appointment in the calendar. Use this after confirming availability and getting confirmation from the client.",
+        "parameters": {
+          "email": {
+            "type": "string",
+            "description": "Client's email address"
+          },
+          "start_time": {
+            "type": "string",
+            "description": "Appointment start time in ISO format"
+          },
+          "end_time": {
+            "type": "string",
+            "description": "Appointment end time in ISO format"
+          },
+          "summary": {
+            "type": "string",
+            "description": "Brief description of the appointment (e.g., 'Interior Detailing')"
+          }
+        }
+      },
+      "id": "book-event-tool",
+      "name": "Book Event Tool",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1,
+      "position": [450, 400]
+    },
+    {
+      "parameters": {
+        "toolName": "lookup_appointment",
+        "toolDescription": "Find an existing appointment for a client. Use this when the client wants to modify or delete an appointment.",
+        "parameters": {
+          "email": {
+            "type": "string",
+            "description": "Client's email address"
+          },
+          "after_time": {
+            "type": "string",
+            "description": "Search for appointments after this time (ISO format)"
+          },
+          "before_time": {
+            "type": "string",
+            "description": "Search for appointments before this time (ISO format)"
+          }
+        }
+      },
+      "id": "lookup-appointment-tool",
+      "name": "Lookup Appointment Tool",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1,
+      "position": [450, 500]
+    },
+    {
+      "parameters": {
+        "toolName": "update_appointment",
+        "toolDescription": "Update an existing appointment. Use this when a client wants to reschedule or modify their appointment.",
+        "parameters": {
+          "event_id": {
+            "type": "string",
+            "description": "The unique event ID from the calendar"
+          },
+          "email": {
+            "type": "string",
+            "description": "Client's email address"
+          },
+          "start_time": {
+            "type": "string",
+            "description": "New start time in ISO format"
+          },
+          "end_time": {
+            "type": "string",
+            "description": "New end time in ISO format"
+          }
+        }
+      },
+      "id": "update-appointment-tool",
+      "name": "Update Appointment Tool",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1,
+      "position": [450, 600]
+    },
+    {
+      "parameters": {
+        "toolName": "delete_appointment",
+        "toolDescription": "Delete/cancel an appointment. Use this when a client wants to cancel their appointment.",
+        "parameters": {
+          "event_id": {
+            "type": "string",
+            "description": "The unique event ID from the calendar to delete"
+          },
+          "email": {
+            "type": "string",
+            "description": "Client's email address"
+          }
+        }
+      },
+      "id": "delete-appointment-tool",
+      "name": "Delete Appointment Tool",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1,
+      "position": [450, 700]
+    }
+  ],
+  "connections": {
+    "MCP Server Trigger": {
+      "main": [
+        [
+          {
+            "node": "Client Lookup Tool",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "New Client CRM Tool",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Check Availability Tool",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Book Event Tool",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Lookup Appointment Tool",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Update Appointment Tool",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Delete Appointment Tool",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}
