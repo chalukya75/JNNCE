@@ -10,7 +10,7 @@ This package contains everything you need to build an AI voice receptionist syst
 ✅ Book, update, and cancel appointments
 ✅ Answer questions from a knowledge base
 ✅ Transfer calls to specialized departments
-✅ Log detailed call summaries automatically
+✅ Log detailed call summaries automatically.
 
 ## 📦 Package Contents
 
