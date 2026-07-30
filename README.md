@@ -6,7 +6,7 @@ This package contains everything you need to build an AI voice receptionist syst
 
 ✅ Look up clients in a CRM (Google Sheets)
 ✅ Create new client accounts automatically
-✅ Check calendar availability in real-time
+✅ Check calendar availability in real-time,
 ✅ Book, update, and cancel appointments
 ✅ Answer questions from a knowledge base
 ✅ Transfer calls to specialized departments
