@@ -42,7 +42,7 @@
           },
           "phone": {
             "type": "string",
-            "description": "Client's phone number"
+            "description": "Client's phone_number"
           }
         }
       },
