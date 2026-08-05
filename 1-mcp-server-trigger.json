@@ -138,7 +138,7 @@
           },
           "email": {
             "type": "string",
-            "description": "Client's email address"
+            "description": "Client's email address."
           },
           "start_time": {
             "type": "string",
