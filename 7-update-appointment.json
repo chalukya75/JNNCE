@@ -5,7 +5,7 @@
       "parameters": {},
       "id": "workflow-trigger",
       "name": "When called by another workflow",
-      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "type": "n8n-nodes-base.executeWorkflowTriggers",
       "typeVersion": 1,
       "position": [250, 300]
     },
