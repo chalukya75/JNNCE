@@ -38,7 +38,7 @@ This package contains everything you need to build an AI voice receptionist syst
 - Google account (for Sheets and Calendar)
 - Phone number (Vapi provides free test numbers)
 
-### Installation Steps
+### Installation Steps,
 
 1. **Import N8N Workflows**
    - Import all 9 JSON files into your N8N instance
