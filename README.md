@@ -250,4 +250,4 @@ For questions, troubleshooting, or to share your implementation:
 
 **Want to customize?** The system prompt and workflows are fully documented and easy to modify for your specific needs.
 
-Good luck! 🎉
+Good luck! .
