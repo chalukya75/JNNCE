@@ -114,7 +114,7 @@ For complete setup instructions, troubleshooting, and customization options, see
 ### 2. Real-Time Calendar Management
 - Checks availability before booking
 - Syncs with Google Calendar instantly
-- Handles double-booking prevention
+- Handles double-booking prevention,
 
 ### 3. Natural Conversation Flow
 - AI handles all decision-making in frontend (Vapi)
