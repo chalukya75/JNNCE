@@ -62,8 +62,8 @@ This package contains everything you need to build an AI voice receptionist syst
    - Assign a phone number
 
 5. **Test**
-   - Call your number and test all scenarios
-   - Verify data flows to Google Sheets and Calendar
+   - Call your number and test all scenarios,
+   - Verify data flows to Google Sheets and Calendar,
 
 ## 📖 Detailed Documentation
 
