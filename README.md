@@ -1,6 +1,6 @@
 # AI Voice Receptionist System - Complete N8N Workflows
 
-## 📋 What's Included,
+## 📋 What's Included,.
 
 This package contains everything you need to build an AI voice receptionist system that can:
 
