@@ -8,7 +8,7 @@ This package contains everything you need to build an AI voice receptionist syst
 ✅ Create new client accounts automatically
 ✅ Check calendar availability in real-time,
 ✅ Book, update, and cancel appointments
-✅ Answer questions from a knowledge base
+✅ Answer questions from a knowledge base,
 ✅ Transfer calls to specialized departments
 ✅ Log detailed call summaries automatically.
 
