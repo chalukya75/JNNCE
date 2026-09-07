@@ -69,7 +69,7 @@
       },
       "id": "check-availability-tool",
       "name": "Check Availability Tool",
-      "type": "n8n-nodes-base.executeWorkflow",
+      "type": "n8n-nodes-base.executeWorkflowes",
       "typeVersion": 1,
       "position": [450, 300]
     },
