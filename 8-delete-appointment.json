@@ -11,7 +11,7 @@
     },
     {
       "parameters": {
-        "operation": "delete",
+        "operation": "deletes",
         "calendarId": {
           "__rl": true,
           "value": "primary",
